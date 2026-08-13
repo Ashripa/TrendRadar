@@ -44,7 +44,7 @@ concurrency:
   cancel-in-progress: true
 
 permissions:
-  contents: read
+  contents: write
   actions: write
 
 jobs:
@@ -168,6 +168,26 @@ jobs:
           S3_REGION: ${{ secrets.S3_REGION }}
           GITHUB_ACTIONS: true
         run: uv run python -m trendradar
+
+      # --------------------------------------------------------------------------------
+      # 📄 COMMIT REPORT TO GITHUB PAGES / 回写报告到 GitHub Pages
+      # --------------------------------------------------------------------------------
+      # 将爬虫生成的 index.html 与 output 数据提交回 master 分支，
+      # 使 GitHub Pages (https://<user>.github.io/TrendRadar/) 自动更新。
+      # --------------------------------------------------------------------------------
+      - name: Commit report to GitHub Pages
+        if: success()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "ℹ️ No changes to commit"
+          else
+            git commit -m "chore: update hot news report [skip ci]"
+            git push
+            echo "✅ Report committed to master, GitHub Pages will refresh"
+          fi
 
       # --------------------------------------------------------------------------------
       # ☁️ CLOUDFLARE PAGES DEPLOY / 部署到 Cloudflare Pages（可选）
