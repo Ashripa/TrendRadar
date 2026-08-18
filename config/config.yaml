@@ -212,6 +212,49 @@ rss:
       name: "Hacker News"
       url: "https://hnrss.org/frontpage"
 
+    # AI 一手动态与技术进展
+    - id: "openai-engineering"
+      name: "OpenAI Engineering"
+      url: "https://openai.com/news/engineering/rss.xml"
+
+    - id: "nvidia-developer"
+      name: "NVIDIA Developer Blog"
+      url: "https://developer.nvidia.com/blog/feed/"
+
+    - id: "mit-ai"
+      name: "MIT News - Artificial Intelligence"
+      url: "https://news.mit.edu/rss/topic/artificial-intelligence2"
+
+    # 科技产业、公司战略与创业商业
+    - id: "venturebeat"
+      name: "VentureBeat"
+      url: "https://venturebeat.com/feed/"
+
+    - id: "techcrunch"
+      name: "TechCrunch"
+      url: "https://techcrunch.com/feed/"
+
+    - id: "benedict-evans"
+      name: "Benedict Evans"
+      url: "https://www.ben-evans.com/benedictevans?format=rss"
+
+    - id: "stratechery"
+      name: "Stratechery"
+      url: "https://stratechery.com/feed/"
+
+    - id: "pragmatic-engineer"
+      name: "The Pragmatic Engineer"
+      url: "https://blog.pragmaticengineer.com/rss/"
+
+    # 新产品、市场机会与商业基础设施
+    - id: "product-hunt"
+      name: "Product Hunt"
+      url: "https://www.producthunt.com/feed"
+
+    - id: "stripe-blog"
+      name: "Stripe Blog"
+      url: "https://stripe.com/blog/feed.rss"
+
     - id: "ruanyifeng"
       name: "阮一峰的网络日志"
       url: "http://www.ruanyifeng.com/blog/atom.xml"
